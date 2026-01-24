@@ -1,9 +1,6 @@
 import argparse
-from os import remove
 
-from colorama import Fore, Style
-
-from strings import *
+from luamoon.cli.strings import *
 
 def get_arg_parser():
     parser = argparse.ArgumentParser(prog=NAME, description=DESCRIPTION)
@@ -23,9 +20,3 @@ def get_arg_parser():
     subparsers.add_parser('list')
 
     return parser
-
-
-if __name__ == '__main__':
-    _parser = get_arg_parser()
-    parsed_args = _parser.parse_args()
-    print(parsed_args)

@@ -1,7 +1,6 @@
-import json
 from luamoon.core import *
 
-from downloader import download_pkg
+from luamoon.core.downloader import download_pkg
 from luamoon.lockfile.main import *
 
 
@@ -24,12 +23,13 @@ def add_package(package_name):
         data = json.load(index_file)
     try:
         pkg_data = data[package_name]
+        pkg_data = pkg_data[0]  # todo: resolve the appropriate version
     except KeyError:
         pass  # Todo: Add appropriate error message in the cli
 
     # todo: check lua versions and library versions
 
-    download_pkg(pkg_data['url'], os.path.normpath(packages_path + '\\' + package_name))
+    download_pkg(pkg_data['source'], os.path.normpath(packages_path + '\\' + package_name + '.zip'))
     # todo: check if the pkg is downloaded successfully
     # todo: extract it properly
 
