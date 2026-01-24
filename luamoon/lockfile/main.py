@@ -9,6 +9,10 @@ headers = {
     'packages': {}
 }
 
+def write_headers():
+    with open(lockfile_path, 'w') as lockfile:
+        json.dump(headers, lockfile, indent=4)
+
 def add_package_data(pkg_name, pkg_data):
     headers['packages'][pkg_name] = pkg_data
     with open(lockfile_path, 'w') as f:
