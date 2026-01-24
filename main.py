@@ -6,13 +6,18 @@ def main():
     parser = get_arg_parser()
     args = parser.parse_args()
 
-    if args.subparsers == 'init':
+    if args.command == 'init':
+        if args.lua:
+            pass
+        if args.env:
+            change_venv_name(args.env)
         init_project()
-    elif args.subparsers == 'add':
+
+    elif args.command == 'add':
         add_package(args.package_name)
-    elif args.subparsers == 'remove':
+    elif args.command == 'remove':
         remove_package(args.package_name)
-    elif args.subparsers == 'list':
+    elif args.command == 'list':
         list_packages()
 
 if __name__ == '__main__':
