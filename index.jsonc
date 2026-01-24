@@ -1,0 +1,40 @@
+// These are some packages used for test only
+{
+  "pixel3d": [
+    {
+      "version": "8fd6016",
+      "source": "https://github.com/challacade/pixel3d.git",
+      "lua": ">=5.1",
+      "type": "pure",
+      "dependencies": {}
+    }
+  ],
+  "luascoket": [
+    {
+      "version": "3.1.0",
+      "source": "https://github.com/lunarmodules/luasocket/archive/refs/tags/v3.1.0.zip",
+      "lua": ">=5.1",
+      "type": "native",
+      "builds": {
+        "windows": ["x64"],
+        "linux": ["x64", "arm64"],
+        "macos": ["x64", "arm64"]
+      },
+      "dependencies": {}
+    }
+  ],
+  "luasystem": [
+    {
+      "version": "0.6.3",
+      "source": "https://github.com/lunarmodules/luasystem/releases/tag/v0.6.3",
+      "lua": ">=5.1",
+      "type": "native",
+      "builds": {
+        "windows": ["x64"],
+        "linux": ["x64", "arm64"],
+        "macos": ["x64", "arm64"]
+      },
+      "dependencies": {}
+    }
+  ]
+}
