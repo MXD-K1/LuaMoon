@@ -119,23 +119,6 @@ LuaMoon follows a few guiding principles:
 
 LuaMoon prefers clarity over cleverness—even when that costs a few extra keystrokes.
 
----
-
-## Comparison with LuaRocks
-
-| Feature                | LuaRocks | LuaMoon      |
-| ---------------------- | -------- | ------------ |
-| Global installs        | Yes      | No (default) |
-| Project isolation      | Partial  | Yes          |
-| Lockfile               | No       | Yes          |
-| Deterministic installs | No       | Yes          |
-| Beginner UX            | Medium   | High         |
-| Lua-first design       | Yes      | Yes          |
-
-LuaMoon is not a replacement—it is an alternative model.
-
----
-
 ## Roadmap
 
 Planned features include:
