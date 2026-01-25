@@ -6,4 +6,4 @@ def download_pkg(url, path):
         with open(path, 'wb') as f:
             f.write(response.content)
     else:
-        pass  # Todo: Add appropriate error message in the cli
+        pass  # todo: Add appropriate error message in the cli

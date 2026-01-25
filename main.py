@@ -8,7 +8,7 @@ def main():
 
     if args.command == 'init':
         if args.lua:
-            pass
+            change_lua_version(args.lua)
         if args.env:
             change_venv_name(args.env)
         init_project()
