@@ -21,6 +21,25 @@ def get_arg_parser():
     remove_parser = subparsers.add_parser('remove')
     remove_parser.add_argument('package_name')
 
+    update_parser = subparsers.add_parser('update')
+    update_parser.add_argument('package_name')
+
+    search_parser = subparsers.add_parser('search')
+    search_parser.add_argument('package_name')
+
+    config_parser = subparsers.add_parser('config')
+    config_parser.add_argument('key', nargs='?')
+    config_parser.add_argument('value', nargs='?')
+    config_parser.add_argument('--list')  # lists the key-value pairs
+    config_parser.add_argument('--global', dest='global_')
+    config_parser.add_argument('--reset')
+    # todo: handle the cases where key and value are needed but not provided
+    # todo: if only key is provided print its value
+
     subparsers.add_parser('list')
+    subparsers.add_parser('run')
+    subparsers.add_parser('publish')
+    subparsers.add_parser('luarocks')
+    # todo: luarocks integration
 
     return parser
