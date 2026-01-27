@@ -11,7 +11,7 @@ def change_venv_name(new_venv_name):
     venv_name = new_venv_name
     venv_path = os.path.join(path, venv_name)
     packages_path = os.path.normpath(path + '\\' + venv_name + '\\' + 'packages')
-    lockfile_path = os.path.normpath(path + '\\' + venv_name + '\\' + 'luamoon.lock')
+    lockfile_path = os.path.normpath(path + '\\' + venv_name + '\\' + 'src.lock')
 
 def change_lua_version(new_lua_version):
     global lua_version
