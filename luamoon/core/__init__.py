@@ -1,7 +1,7 @@
 import os
 
 path = os.getcwd()
-venv_name = '.luavenv'
+venv_name = '.luamoon'
 venv_path = os.path.join(path, venv_name)
 packages_path = os.path.normpath(path + '\\' + venv_name + '\\' + 'packages')
 lockfile_path = os.path.normpath(path + '\\' + venv_name + '\\' + 'luamoon.lock')
