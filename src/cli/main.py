@@ -14,6 +14,8 @@ def get_arg_parser():
     # todo: support choosing lua version
     init_parser.add_argument('-e', '--env', help=HELP['init-env'])
     # todo: venv name is not changing fix that.
+    init_parser.add_argument('--lib')
+    init_parser.add_argument('--project')
 
     add_parser = subparsers.add_parser('add')
     add_parser.add_argument('package_name')
@@ -36,9 +38,9 @@ def get_arg_parser():
     # todo: handle the cases where key and value are needed but not provided
     # todo: if only key is provided print its value
 
-    subparsers.add_parser('list')
-    subparsers.add_parser('run')
-    subparsers.add_parser('publish')
+    subparsers.add_parser('list')  # list deps
+    subparsers.add_parser('run')  # run a project
+    subparsers.add_parser('publish')  # publish a library
     subparsers.add_parser('luarocks')
     # todo: luarocks integration
 
