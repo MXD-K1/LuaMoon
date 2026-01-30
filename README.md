@@ -50,7 +50,7 @@ For now, clone the repository and use it directly:
 
 ```bash
 git clone https://github.com/MXD-K1/luamoon.git
-cd src
+cd luamoon
 ```
 
 Future releases will include standalone binaries and installer scripts.
@@ -95,7 +95,7 @@ Never edit this file manually.
 LuaMoon can optionally interoperate with LuaRocks:
 
 ```bash
-src luarocks add luasocket
+luamoon luarocks add luasocket
 ```
 
 This allows:

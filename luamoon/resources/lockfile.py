@@ -1,7 +1,7 @@
 import json
 from typing import Any
 
-from luamoon.lockfile import *
+from luamoon.resources import *
 
 headers: dict[str, Any] | None = None
 

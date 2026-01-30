@@ -1,5 +1,6 @@
 from luamoon.cli.main import get_arg_parser
 from luamoon.core.main import *
+from luamoon.core.commands import *
 
 
 def main():
