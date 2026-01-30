@@ -3,6 +3,7 @@ import os
 from luamoon.core import *
 from luamoon.core.main import get_lua_version
 from luamoon.resources.lockfile import *
+from luamoon.resources.toml import create_project_toml
 
 def init_project():
     # create dirs and files
@@ -14,7 +15,7 @@ def init_project():
         os.mkdir(os.path.join(path, venv_name, 'include'))
 
         with open(os.path.join(path, 'README.md'), 'w'): pass
-
+        create_project_toml()
 
     except FileExistsError:
         pass  # todo: Add appropriate error message in the cli
