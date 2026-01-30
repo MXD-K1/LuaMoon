@@ -15,6 +15,9 @@ def init_project():
         os.mkdir(os.path.join(path, venv_name, 'include'))
 
         with open(os.path.join(path, 'README.md'), 'w'): pass
+        with open(os.path.join(path, 'src', 'main.lua'), 'w') as f:
+            f.write('print("Hello World")')
+
         create_project_toml()
 
     except FileExistsError:
