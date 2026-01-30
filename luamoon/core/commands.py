@@ -14,7 +14,7 @@ def init_project():
         os.mkdir(os.path.join(path, venv_name, 'include'))
 
         with open(os.path.join(path, 'README.md'), 'w'): pass
-        with open(os.path.join(path, 'luaproject.toml'), 'w'): pass
+
 
     except FileExistsError:
         pass  # todo: Add appropriate error message in the cli
