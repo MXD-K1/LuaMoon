@@ -1,17 +1,29 @@
 {
-  "pixel3d": [
-    {
+  "windfield": {
+    "version": "1.2.3.0",
+      "source": "https://github.com/a327ex/windfield/archive/refs/heads/master.zip",
+      "lua": ">=5.1",
+      "type": "pure",
+      "dependencies": {}
+  },
+
+  "sti": {
+    "version": "1.2.3.0",
+      "source": "https://github.com/karai17/Simple-Tiled-Implementation/archive/refs/tags/v{version}.zip",
+      "lua": ">=5.1",
+      "type": "pure",
+      "dependencies": {}
+  },
+  "pixel3d": {
       "version": "8fd6016",
       "source": "https://github.com/challacade/pixel3d/archive/refs/heads/main.zip",
       "lua": ">=5.1",
       "type": "pure",
       "dependencies": {}
-    }
-  ],
-  "luascoket": [
-    {
+    },
+  "luascoket": {
       "version": "3.1.0",
-      "source": "https://github.com/lunarmodules/luasocket/archive/refs/tags/v3.1.0.zip",
+      "source": "https://github.com/lunarmodules/luasocket/archive/refs/tags/v{version}.zip",
       "lua": ">=5.1",
       "type": "native",
       "builds": {
@@ -20,12 +32,10 @@
         "macos": ["x64", "arm64"]
       },
       "dependencies": {}
-    }
-  ],
-  "luasystem": [
-    {
+    },
+  "luasystem": {
       "version": "0.6.3",
-      "source": "https://github.com/lunarmodules/luasystem/releases/tag/v0.6.3",
+      "source": "https://github.com/lunarmodules/luasystem/releases/tag/v{version}.zip",
       "lua": ">=5.1",
       "type": "native",
       "builds": {
@@ -35,5 +45,4 @@
       },
       "dependencies": {}
     }
-  ]
 }
