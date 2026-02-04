@@ -1,6 +1,6 @@
 import argparse
 
-from luamoon.cli.strings import *
+from luamoon.cli import *
 
 def get_arg_parser():
     parser = argparse.ArgumentParser(prog=NAME, description=DESCRIPTION)
