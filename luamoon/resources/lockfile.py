@@ -1,4 +1,4 @@
-import json
+import toml
 from typing import Any
 
 from luamoon.resources import *
@@ -9,7 +9,7 @@ def create_lockfile(headers_):
     global headers
     headers = headers_
     with open(lockfile_path, 'w') as lockfile:
-        json.dump(headers_, lockfile, indent=4)
+        toml.dump(headers_, lockfile)
 
 def create_lockfile_headers(lua_version):
     return {
@@ -22,7 +22,7 @@ def create_lockfile_headers(lua_version):
 def add_package_data(pkg_name, pkg_data):
     headers['packages'][pkg_name] = pkg_data
     with open(lockfile_path, 'w') as f:
-        json.dump(headers, f, indent=4)
+        toml.dump(headers, f)
 
 def remove_package_data(pkg_name):
     try:
@@ -31,4 +31,4 @@ def remove_package_data(pkg_name):
         return  # todo: raise an error in the cli
 
     with open(lockfile_path, 'w') as f:
-        json.dump(headers, f, indent=4)
+        toml.dump(headers, f)
