@@ -12,7 +12,7 @@ def main():
             change_lua_version(args.lua)
         if args.env:
             change_venv_name(args.env)
-        init_project()
+        init(args.type_)
 
     elif args.command == 'add':
         add_package(args.package_name)

@@ -14,8 +14,11 @@ def get_arg_parser():
     # todo: support choosing lua version
     init_parser.add_argument('-e', '--env', help=HELP['init-env'])
     # todo: venv name is not changing fix that.
-    init_parser.add_argument('--lib')
-    init_parser.add_argument('--project')
+
+    group = init_parser.add_mutually_exclusive_group()
+    group.add_argument('--lib', dest='type_', action='store_const', const='lib')
+    group.add_argument('--project', dest='type_', action='store_const', const='project')
+    init_parser.set_defaults(type_='project')
 
     add_parser = subparsers.add_parser('add')
     add_parser.add_argument('package_name')
