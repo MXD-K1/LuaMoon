@@ -16,6 +16,8 @@ def main():
 
     elif args.command == 'add':
         add_package(args.package_name)
+    elif args.command == 'update':
+        update_package(args.package_name)
     elif args.command == 'remove':
         remove_package(args.package_name)
     elif args.command == 'list':

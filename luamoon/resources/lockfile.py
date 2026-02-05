@@ -6,7 +6,7 @@ from luamoon.resources import *
 headers: dict[str, Any] | None = {
         'version': '1.0.0',
         'lua-version': '',
-        'packages': {}
+        'packages': []
     }
 
 def create_lockfile(headers_):
@@ -25,14 +25,17 @@ def create_lockfile_headers(lua_version):
 
 
 def add_package_data(pkg_name, pkg_data):
-    headers['packages'][pkg_name] = pkg_data
+    pkg = {pkg_name: pkg_data}
+    headers['packages'].append(pkg)
     with open(lockfile_path, 'w') as f:
         toml.dump(headers, f)
 
 def remove_package_data(pkg_name):
     try:
-        del headers['packages'][pkg_name]
-    except KeyError:
+        for pkg in headers['packages']:
+            if pkg['name'] == pkg_name:
+                headers['packages'].remove(pkg)
+    except ValueError:
         return  # todo: raise an error in the cli
 
     with open(lockfile_path, 'w') as f:
