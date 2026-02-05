@@ -22,7 +22,7 @@ project_headers = {
 
 lib_headers = {
     "project": {
-        "name": "myproject",
+        "name": "mylib",
         "version": "0.1.0",
         "description": "",
         "author": "",
