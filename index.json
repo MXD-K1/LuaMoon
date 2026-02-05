@@ -1,6 +1,6 @@
 {
   "windfield": {
-    "version": "1.2.3.0",
+    "version": "830c6f9",
       "source": "https://github.com/a327ex/windfield/archive/refs/heads/master.zip",
       "lua": ">=5.1",
       "type": "pure",
