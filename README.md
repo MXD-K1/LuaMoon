@@ -9,34 +9,44 @@ LuaMoon is designed as a *modern companion* to existing tools, not a scorched-ea
 ---
 
 ## Why LuaMoon Exists
-Lua is small, flexible, and embeddable—but its package story is fragmented.
+Lua is small, flexible, and embeddable, but its package story is fragmented.
 
-LuaRocks solved many problems, but over time a few pain points became clear:
-
-* Inconsistent environments across machines
-* Global vs local installs confusion
-* Limited reproducibility guarantees
-* Friction for beginners
-* Tooling that assumes Unix-first workflows
-
-LuaMoon explores a different design space:
-
-* **Project-first** dependency management
-* **Lockfiles** for reproducible installs
-* **Explicit environments** instead of global magic
-* **Beginner-friendly defaults**, expert-level control
+LuaMoon aims to solve existing problems with LuaRocks such as:
+- The lack of project-local installs. (Only global installs)
+- The lack of virtual environments.
+- The need to tweak package.path/package.cpath every time a project is created.
+- Confusing CLI.
+- The non-standard config format.
+- Build failures.
+- The lack of proper documentation.
+- The need to write a rockspec for every version of the library.
 
 ---
 
-## Features (Intened but not implemnted yet)
+## Quick Start
+Here are the commands of LuaMoon: (These are not implemented yet)
+- Initialize a new LuaMoon project: `luamoon init`
+- Add a dependency: `luamoon add pkg`
+- Update a dependency: `luamoon update pkg`
+- Remove a dependency: `luamoon remove pkg`
+- Search if a dependency exist: `luamoon search pkg-name`
+- List project dependencies: `luamoon list`
+- Run project: `luamoon run`
+- Publish a package to the index: `luamoon publish`
 
-* 📦 Project-local dependencies (no global pollution)
-* 🔒 Lockfile-based reproducible installs
-* 🧩 Deterministic dependency resolution
-* 🗂️ Clear on-disk package layout
-* ⚙️ Simple, scriptable CLI
-* 🔁 Optional interoperability with LuaRocks
-* 🧪 Designed for experimentation and evolution
+(Note: Some of these commands might change as the project is in early development stage)
+
+---
+
+## Features (Intended but not implemented yet)
+
+* Project-local dependencies (no global pollution)
+* Lockfile-based reproducible installs
+* Deterministic dependency resolution
+*  Clear on-disk package layout
+*  Simple, scriptable CLI
+* Optional interoperability with LuaRocks
+* Designed for experimentation and evolution
 
 > LuaMoon is under active development. Expect rough edges, sharp ideas, and rapid iteration.
 
@@ -68,6 +78,7 @@ Contributions of all kinds are welcome:
 and more ...
 
 Please read [`CONTRIBUTING.md`](docs/CONTRIBUTING.md) before opening a pull request.
+
 ---
 
 ## License
