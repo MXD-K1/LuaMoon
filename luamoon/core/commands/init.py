@@ -5,6 +5,11 @@ from luamoon.core.main import get_lua_version
 from luamoon.resources.lockfile import create_lockfile_headers, create_lockfile
 from luamoon.resources.toml import create_project_toml, create_lib_toml
 
+def init(type_):
+    if type_ == 'project':
+        init_project()
+    elif type_ == 'lib':
+        init_lib()
 
 def init_project():
     # create dirs and files
