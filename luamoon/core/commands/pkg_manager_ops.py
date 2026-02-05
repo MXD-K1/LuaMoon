@@ -26,5 +26,8 @@ def remove_package(package_name):
 def update_package(package_name):
     pass
 
+def search_package(package_name):
+    pass
+
 def list_packages():
     pass
