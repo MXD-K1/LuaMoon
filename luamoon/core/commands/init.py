@@ -12,7 +12,7 @@ def init_project():
         os.mkdir(venv_path)
         os.mkdir(os.path.join(path, 'src'))
         os.mkdir(os.path.join(path, venv_name, 'bin'))
-        os.mkdir(os.path.join(path, venv_name, 'packages'))
+        os.mkdir(package_path)
         os.mkdir(os.path.join(path, venv_name, 'include'))
 
         with open(os.path.join(path, 'README.md'), 'w'): pass
