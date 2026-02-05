@@ -32,3 +32,6 @@ def remove_package_data(pkg_name):
 
     with open(lockfile_path, 'w') as f:
         toml.dump(headers, f)
+
+def update_package_data():
+    pass
