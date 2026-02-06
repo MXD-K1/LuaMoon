@@ -1,0 +1,12 @@
+[project]
+name = "windfield"
+version = "830c6f9"
+description = "Physics module for LÖVE"
+author = "SSYGEN"
+license = "MIT"
+
+[environment]
+type = "LOVE"
+src_dir = "windfield"
+
+[dependencies]
