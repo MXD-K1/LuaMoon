@@ -15,7 +15,7 @@ def get_url_content(url: str, timeout=TIMEOUT, retries=RETRIES):
         # todo: Add appropriate error message in the cli
 
 # noinspection PyTypeChecker
-def download_pkg(url: str, pkg_name: str, pkg_version: str, path: str):
+def download_pkg(url: str, pkg_name: str, pkg_version: str, path: str) -> str:
     response_bytes = get_url_content(url.format(version=pkg_version))
     full_path = os.path.join(path, pkg_name + '.zip')
 
