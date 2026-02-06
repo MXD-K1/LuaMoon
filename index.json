@@ -4,7 +4,8 @@
       "source": "https://github.com/a327ex/windfield/archive/refs/heads/master.zip",
       "lua": ">=5.1",
       "type": "pure",
-      "dependencies": {}
+      "dependencies": {},
+      "manifest": "windfield.manifest.toml"
   },
 
   "sti": {
@@ -12,7 +13,8 @@
       "source": "https://github.com/karai17/Simple-Tiled-Implementation/archive/refs/tags/v{version}.zip",
       "lua": ">=5.1",
       "type": "pure",
-      "dependencies": {}
+      "dependencies": {},
+      "manifest": "sti.manifest.toml"
   },
   "pixel3d": {
       "version": "8fd6016",

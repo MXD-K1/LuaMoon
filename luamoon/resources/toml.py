@@ -30,6 +30,7 @@ lib_headers = {
     },
     "environment": {
         "type": "",
+        "src_dir": "",
         "lua_version": "5.1",
     },
     "dependencies": {}
