@@ -15,10 +15,15 @@ def get_arg_parser():
     init_parser.add_argument('-e', '--env', help=HELP['init-env'])
     # todo: venv name is not changing fix that.
 
-    group = init_parser.add_mutually_exclusive_group()
-    group.add_argument('--lib', dest='type_', action='store_const', const='lib')
-    group.add_argument('--project', dest='type_', action='store_const', const='project')
+    project_type_group = init_parser.add_mutually_exclusive_group()
+    project_type_group.add_argument('--lib', dest='type_', action='store_const', const='lib')
+    project_type_group.add_argument('--project', dest='type_', action='store_const', const='project')
     init_parser.set_defaults(type_='project')
+
+    runtime_type_group = init_parser.add_mutually_exclusive_group()
+    runtime_type_group.add_argument('--lua', dest='runtime', action='store_const', const='lua')
+    runtime_type_group.add_argument('--love', dest='runtime', action='store_const', const='love')
+    init_parser.set_defaults(runtime='lua')
 
     add_parser = subparsers.add_parser('add')
     add_parser.add_argument('package_name')
