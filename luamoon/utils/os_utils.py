@@ -1,4 +1,5 @@
 import platform
+import pefile
 
 def detect_platform() -> str:
     if platform.system() == 'Darwin':
@@ -10,3 +11,7 @@ def detect_platform() -> str:
     else:
         return "Unknown"
         # todo: add proper cli error
+
+def get_exe_version(exe_path) -> str | None:
+    pe = pefile.PE(exe_path)
+    return pe.FileInfo[0][0].StringTable[0].entries[b'FileVersion'].decode()
