@@ -8,7 +8,7 @@ def main():
     args = parser.parse_args()
 
     if args.command == 'init':
-        if args.lua:
+        if args.lua_version:
             change_lua_version(args.lua)
         if args.env:
             change_venv_name(args.env)
