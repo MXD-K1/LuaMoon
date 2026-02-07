@@ -129,3 +129,5 @@ def search_love2d() -> tuple[str, str] | None:
 
     else:
         return None
+
+__all__ = ['detect_lua', 'detect_luajit', 'detect_luarocks', 'detect_love2d']
