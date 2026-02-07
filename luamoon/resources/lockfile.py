@@ -3,10 +3,10 @@ from typing import Any
 
 from luamoon.resources import *
 
-headers: dict[str, Any] | None = {
+headers = {
         'version': '1.0.0',
-        'lua-version': '',
-        'packages': []
+        'lua-version': '5.1',
+        'packages': {}
     }
 
 def create_lockfile(headers_):
@@ -15,13 +15,11 @@ def create_lockfile(headers_):
     with open(lockfile_path, 'w') as lockfile:
         toml.dump(headers_, lockfile)
 
-def create_lockfile_headers(lua_version):
+def update_lockfile_headers(lua_version):
     global headers
-    headers = {
-        'version': '1.0.0',
-        'lua-version': lua_version,
-        'packages': {}
-    }
+    headers['lua-version'] = lua_version
+    # todo: add a new_headers param
+    return headers
 
 
 def add_package_data(pkg_name, pkg_data):

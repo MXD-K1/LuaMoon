@@ -3,7 +3,7 @@ import shutil
 
 from luamoon.core import *
 from luamoon.core.main import get_lua_version
-from luamoon.resources.lockfile import create_lockfile_headers, create_lockfile
+from luamoon.resources.lockfile import update_lockfile_headers, create_lockfile
 from luamoon.resources.toml import create_project_toml, create_lib_toml
 from luamoon.binaries import *
 
@@ -17,10 +17,10 @@ def init(purpose, runtime_type):
 def add_binaries(runtime_type):
     if runtime_type == 'lua':
         lua_path = detect_lua()[0]
-        shutil.copyfile(lua_path, os.path.join(path, venv_name, 'bin'))
+        shutil.copy2(lua_path, os.path.join(path, venv_name, 'bin'))
     elif runtime_type == 'love':
         love_path = detect_love2d()[0]
-        shutil.copyfile(love_path, os.path.join(path, venv_name, 'bin'))
+        shutil.copy2(love_path, os.path.join(path, venv_name, 'bin'))
     # todo:decide when to add luarocks
 
 
@@ -41,6 +41,9 @@ def init_project(runtime_type):
 
         create_project_toml()
 
+        headers_ = update_lockfile_headers(get_lua_version())
+        create_lockfile(headers_)
+
     except FileExistsError:
         pass  # todo: Add appropriate error message in the cli
         # todo: ask for overriding
@@ -49,9 +52,6 @@ def init_project(runtime_type):
 
     # todo: Ship the binary in the venv dir
     # todo: Ship the lua binary in the venv dir
-
-    headers_ = create_lockfile_headers(get_lua_version())
-    create_lockfile(headers_)
 
 def init_lib(runtime_type):
     # create dirs and files
@@ -69,6 +69,8 @@ def init_lib(runtime_type):
             f.write('print("Hello World")')
 
         create_lib_toml()
+        headers_ = update_lockfile_headers(get_lua_version())
+        create_lockfile(headers_)
 
     except FileExistsError:
         pass  # todo: Add appropriate error message in the cli
@@ -78,6 +80,3 @@ def init_lib(runtime_type):
 
     # todo: Ship the binary in the venv dir
     # todo: Ship the lua binary in the venv dir
-
-    headers_ = create_lockfile_headers(get_lua_version())
-    create_lockfile(headers_)
