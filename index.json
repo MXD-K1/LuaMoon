@@ -18,7 +18,7 @@
   },
   "pixel3d": {
       "version": "8fd6016",
-      "source": "https://github.com/challacade/pixel3d/archive/refs/heads/{version}.zip",
+      "source": "https://github.com/challacade/pixel3d/archive/{version}.zip",
       "lua": ">=5.1",
       "type": "pure",
       "dependencies": {},
@@ -26,7 +26,7 @@
   },
   "sunscreen": {
       "version": "632bc89",
-      "source": "https://github.com/challacade/sunscreen/archive/refs/heads/{version}.zip",
+      "source": "https://github.com/challacade/sunscreen/archive/{version}.zip",
       "lua": ">=5.1",
       "type": "pure",
       "dependencies": {},
