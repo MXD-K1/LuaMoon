@@ -1,8 +1,12 @@
+from rich import print as rich_print
+
 from luamoon.cli.main import get_arg_parser
 from luamoon.core.main import *
 from luamoon.core.commands import *
+from luamoon.colors import Color, color_text
 
-NOT_IMPLEMENTED_MSG = "Sorry, this feature isn’t available yet :)"
+
+NOT_IMPLEMENTED_MSG = color_text(Color.CYAN, "Sorry, this feature isn’t available yet :)")
 
 def main():
     parser = get_arg_parser()
@@ -17,7 +21,7 @@ def main():
         if args.runtime == 'lua':
             init(args.type_, args.runtime)
         else:
-            print(NOT_IMPLEMENTED_MSG)
+            rich_print(NOT_IMPLEMENTED_MSG)
 
     elif args.command == 'add':
         add_package(args.package_name)
@@ -28,13 +32,13 @@ def main():
     elif args.command == 'list':
         list_packages()
     elif args.command == 'search':
-        print(NOT_IMPLEMENTED_MSG)
+        rich_print(NOT_IMPLEMENTED_MSG)
     elif args.command == 'publish':
-        print(NOT_IMPLEMENTED_MSG)
+        rich_print(NOT_IMPLEMENTED_MSG)
     elif args.command == 'config':
-        print(NOT_IMPLEMENTED_MSG)
+        rich_print(NOT_IMPLEMENTED_MSG)
     elif args.command == 'run':
-        print(NOT_IMPLEMENTED_MSG)
+        rich_print(NOT_IMPLEMENTED_MSG)
 
 if __name__ == '__main__':
     main()
