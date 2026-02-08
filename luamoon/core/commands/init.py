@@ -14,15 +14,22 @@ def init(purpose, runtime_type):
         init_lib(runtime_type)
 
 
+def ignore(_, files):
+    """Temp Function."""
+    return [f for f in files for ext in [".ico", ".txt", ".md", ".png"] if f.endswith(ext)]
+
 def add_binaries(runtime_type):
     if runtime_type == 'lua':
         lua_path = detect_lua()[0]
         shutil.copy2(lua_path, os.path.join(path, venv_name, 'bin'))
     elif runtime_type == 'love':
-        love_path = detect_love2d()[0]
-        shutil.copy2(love_path, os.path.join(path, venv_name, 'bin'))
+        love_path = detect_love2d()[0].split(os.path.sep)[:-1]
+        love_path = f'{os.path.sep}'.join(love_path)
+        try:
+            shutil.copytree(love_path, os.path.join(path, venv_name, 'bin'), dirs_exist_ok=True, ignore=ignore)
+        except Exception as e:
+            print(e)
     # todo:decide when to add luarocks
-
 
 def init_project(runtime_type):
     # create dirs and files
@@ -59,7 +66,7 @@ def init_lib(runtime_type):
         os.mkdir(venv_path)
         os.mkdir(os.path.join(path, 'src'))
         os.mkdir(os.path.join(path, venv_name, 'bin'))
-        os.mkdir(os.path.join(path, venv_name, 'packages'))
+        os.mkdir(package_path)
         os.mkdir(os.path.join(path, venv_name, 'include'))
 
         add_binaries(runtime_type)
