@@ -6,7 +6,7 @@ import tempfile
 from luamoon.fetch.extract import extract_zip
 from luamoon.fetch.download import download_pkg
 from luamoon.core import index_file_path, package_path
-from luamoon.resources.lockfile import add_package_data, remove_package_data
+from luamoon.resources.lockfile import add_package_data
 
 def add_package(pkg_name: str, pkg_version=None):
     with open(index_file_path, 'r') as index_file:
@@ -31,19 +31,3 @@ def add_package(pkg_name: str, pkg_version=None):
         # todo: extract it properly
 
     add_package_data(pkg_name, pkg_data)
-
-def remove_package(package_name):
-    remove_package_data(package_name)
-    try:
-        os.remove(os.path.join(package_path, package_name))
-    except FileNotFoundError:
-        return  # todo: Add proper cli error message
-
-def update_package(package_name):
-    pass
-
-def search_package(package_name):
-    pass
-
-def list_packages():
-    pass
