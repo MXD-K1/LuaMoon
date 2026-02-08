@@ -30,5 +30,47 @@
       "type": "pure",
       "dependencies": {},
       "manifest": "sunscreen.manifest.toml"
+  },
+  "penlight": {
+    "version": "1.15.0",
+    "source": "https://github.com/lunarmodules/Penlight/archive/refs/tags/v{version}.zip",
+    "lua": ">=5.1",
+    "type": "pure",
+    "dependencies": {}
+  },
+  "lua-stdlib": {
+    "version": "41.2.0",
+    "source": "https://github.com/lua-stdlib/lua-stdlib/archive/refs/tags/v{version}.zip",
+    "lua": ">=5.1",
+    "type": "pure",
+    "dependencies": {}
+  },
+  "moses": {
+    "version": "2.1.0",
+    "source": "https://github.com/Yonaba/Moses/archive/refs/tags/v{version}.zip",
+    "lua": ">=5.1",
+    "type": "pure",
+    "dependencies": {}
+  },
+  "argparse": {
+    "version": "0.6.0",
+    "source": "https://github.com/mpeterv/argparse/archive/refs/tags/v{version}.zip",
+    "lua": ">=5.1",
+    "type": "pure",
+    "dependencies": {}
+  },
+  "json.lua": {
+    "version": "0.1.2",
+    "source": "https://github.com/rxi/json.lua/archive/refs/tags/v{version}.zip",
+    "lua": ">=5.1",
+    "type": "pure",
+    "dependencies": {}
+  },
+  "md5.lua": {
+    "version": "1.1.0",
+    "source": "https://github.com/kikito/md5.lua/archive/refs/tags/v{version}.zip",
+    "lua": ">=5.1",
+    "type": "pure",
+    "dependencies": {}
   }
 }
