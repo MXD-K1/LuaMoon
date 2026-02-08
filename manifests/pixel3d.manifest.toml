@@ -1,0 +1,12 @@
+[project]
+name = "pixel3d"
+version = "8fd6016"
+description = "Render pixel-art as a 3D voxel models, in Love2D"
+author = "Challacade LLC"
+license = "MIT"
+
+[environment]
+type = "LOVE"
+src_dir = "."
+
+[dependencies]

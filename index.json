@@ -7,7 +7,6 @@
       "dependencies": {},
       "manifest": "windfield.manifest.toml"
   },
-
   "sti": {
     "version": "1.2.3.0",
       "source": "https://github.com/karai17/Simple-Tiled-Implementation/archive/refs/tags/v{version}.zip",
