@@ -6,7 +6,14 @@ from luamoon.core.main import get_lua_version
 from luamoon.resources.lockfile import update_lockfile_headers, create_lockfile
 from luamoon.resources.toml import create_project_toml, create_lib_toml
 from luamoon.binaries import *
+from luamoon import PATH
+from luamoon.core import package_path
 
+def change_lua_package_path():
+    PATH['LUA_PATH'] = f'{package_path}'
+    # do not concatenate with the existing path
+
+change_lua_package_path()
 def init(purpose, runtime_type):
     if purpose == 'project':
         init_project(runtime_type)
@@ -57,6 +64,8 @@ def init_project(runtime_type):
 
     # todo: support existing projects
 
+    change_lua_package_path()
+
     # todo: Ship the binary in the venv dir
     # todo: Ship the lua binary in the venv dir
 
@@ -84,6 +93,8 @@ def init_lib(runtime_type):
         # todo: ask for overriding
 
     # todo: support existing projects
+
+    change_lua_package_path()
 
     # todo: Ship the binary in the venv dir
     # todo: Ship the lua binary in the venv dir
