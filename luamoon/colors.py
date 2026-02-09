@@ -1,5 +1,7 @@
 from enum import Enum
 
+from rich import print as rich_print
+
 
 class Color(Enum):
     SUCCESS = "#00FF00"  # green
@@ -14,5 +16,7 @@ class Color(Enum):
     # these colors might change in the future
 
 
-def color_text(color, text):
+def colorize_text(color, text):
     return f"[{color.value}]{text}[/{color.value}]"
+
+__all__ = ["colorize_text", "Color", "rich_print"]

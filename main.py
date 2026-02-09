@@ -1,12 +1,10 @@
-from rich import print as rich_print
-
 from luamoon.cli.main import get_arg_parser
 from luamoon.core.main import *
 from luamoon.core.commands import *
-from luamoon.colors import Color, color_text
+from luamoon.colors import Color, colorize_text, rich_print
 
 
-NOT_IMPLEMENTED_MSG = color_text(Color.INFO, "Sorry, this feature isn’t available yet :)")
+NOT_IMPLEMENTED_MSG = colorize_text(Color.INFO, "Sorry, this feature isn’t available yet :)")
 
 def main():
     parser = get_arg_parser()
