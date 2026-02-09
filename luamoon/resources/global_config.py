@@ -1,4 +1,5 @@
 import os
+import shutil
 
 import toml
 
@@ -13,7 +14,7 @@ headers = {
         'config': {}
     }
 
-def init_cache_dir(headers_=None) -> dict:
+def init_cache_dir(headers_=None):
     global headers
     if headers_ is None:
         headers_ = headers
@@ -22,8 +23,14 @@ def init_cache_dir(headers_=None) -> dict:
         os.mkdir(os.path.join(CACHE_DIR, 'packages'))
         with open(CONFIG_FILE_PATH, 'w') as f:
             toml.dump(headers_, f)
-        return headers_
     else:
         with open(CONFIG_FILE_PATH, 'r') as f:
             headers_ = toml.load(f)
-        return headers_
+            update_headers(headers_)
+
+def update_headers(headers_):
+    global headers
+    headers |= headers_
+
+def add_pkg_to_cache(pkg_dir, pkg_name, pkg_version):
+    shutil.copytree(pkg_dir, os.path.join(CACHE_DIR, 'packages', f'{pkg_name}-{pkg_version}'))
