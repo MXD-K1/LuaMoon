@@ -1,5 +1,5 @@
 # Porting
-This document explains how to adapt an existing Lua (or Lua-based) project to work with LuaMoon, 
+This is an explanation on how to adapt an existing Lua (or Lua-based) project to work with LuaMoon, 
 using the current LuaMoon manifest format as the reference. (Currently only pure Lua scripts are supported)
 
 ## Porting Steps
