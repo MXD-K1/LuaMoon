@@ -1,6 +1,6 @@
 import os
 
-PATH = os.environ.copy()
+PATH = os.environ
 HOMEPATH = os.path.expanduser("~")
 
 # noinspection SpellCheckingInspection

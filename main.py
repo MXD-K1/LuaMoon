@@ -38,7 +38,8 @@ def main():
     elif args.command == 'config':
         rich_print(NOT_IMPLEMENTED_MSG)
     elif args.command == 'run':
-        rich_print(NOT_IMPLEMENTED_MSG)
+        change_paths()
+        run_project('project', 'src/main.lua')  # strings to be replaced
 
 if __name__ == '__main__':
     main()
