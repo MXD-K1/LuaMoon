@@ -7,6 +7,7 @@ from luamoon.fetch.extract import extract_zip
 from luamoon.fetch.download import download_pkg
 from luamoon.core import index_file_path, package_path
 from luamoon.resources.lockfile import add_package_data
+from luamoon.resources.global_config import add_pkg_to_cache
 
 def add_package(pkg_name: str, pkg_version=None):
     with open(index_file_path, 'r') as index_file:
@@ -27,6 +28,7 @@ def add_package(pkg_name: str, pkg_version=None):
             os.rename(os.path.join(path, folder), os.path.join(path, pkg_name))
 
         shutil.move(os.path.join(path, pkg_name), package_path)
+        add_pkg_to_cache(os.path.join(path, pkg_name), pkg_name, pkg_version or pkg_data['version'])
         # todo: check if the pkg is downloaded successfully
         # todo: extract it properly
 
