@@ -30,7 +30,10 @@ def get_url_content(url: str, timeout=TIMEOUT, retries=RETRIES):
 # noinspection PyTypeChecker
 def download_pkg(url: str, pkg_name: str, pkg_version: str, path: str) -> str:
     response_bytes = get_url_content(url.format(version=pkg_version))
-    full_path = os.path.join(path, pkg_name + '.zip')
+    if response_bytes is not None:
+        full_path = os.path.join(path, pkg_name + '.zip')
 
-    with open(full_path, "wb") as zip_f:
-        zip_f.write(response_bytes)
+        with open(full_path, "wb") as zip_f:
+            zip_f.write(response_bytes)
+
+    return None  # to be replaced
