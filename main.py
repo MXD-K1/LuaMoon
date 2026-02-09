@@ -6,7 +6,7 @@ from luamoon.core.commands import *
 from luamoon.colors import Color, color_text
 
 
-NOT_IMPLEMENTED_MSG = color_text(Color.CYAN, "Sorry, this feature isn’t available yet :)")
+NOT_IMPLEMENTED_MSG = color_text(Color.INFO, "Sorry, this feature isn’t available yet :)")
 
 def main():
     parser = get_arg_parser()
