@@ -21,7 +21,7 @@ project_headers = {
 }
 
 lib_headers = {
-    "project": {
+    "package": {
         "name": "mylib",
         "version": "0.1.0",
         "description": "",
@@ -37,6 +37,14 @@ lib_headers = {
 }
 
 # todo: fill the missing fields
+
+def update_project_headers(new_headers):
+    global project_headers
+    project_headers |= new_headers
+
+def update_lib_headers(new_headers):
+    global lib_headers
+    lib_headers |= new_headers
 
 def create_project_toml():
     with open(os.path.join(path, 'luaproject.toml'), 'w') as toml_file:
