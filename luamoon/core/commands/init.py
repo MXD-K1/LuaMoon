@@ -4,10 +4,10 @@ import shutil
 from luamoon.core import *
 from luamoon.core.main import get_lua_version
 from luamoon.resources.lockfile import update_lockfile_headers, create_lockfile
-from luamoon.resources.toml import create_project_toml, create_lib_toml
+from luamoon.resources.toml import create_project_toml, create_lib_toml, update_project_headers, update_lib_headers
 from luamoon.binaries import *
 from luamoon import PATH
-from luamoon.core import package_path, include_path, bin_path
+from luamoon.core import package_path, include_path, bin_path, project_name
 
 def change_paths():
     PATH['PATH'] = f'{bin_path};' + PATH['PATH']
@@ -15,13 +15,11 @@ def change_paths():
     PATH['LUA_CPATH'] = f'{include_path}'
     # do not concatenate with the existing path
 
-change_paths()
 def init(purpose, runtime_type):
     if purpose == 'project':
         init_project(runtime_type)
     elif purpose == 'lib':
         init_lib(runtime_type)
-
 
 def ignore(_, files):
     """Temp Function."""
@@ -51,10 +49,12 @@ def init_project(runtime_type):
 
         add_binaries(runtime_type)
 
-        with open(os.path.join(path, 'README.md'), 'w'): pass
+        with open(os.path.join(path, 'README.md'), 'w') as f:
+            f.write(f'# {project_name.capitalize()}\n')
         with open(os.path.join(path, 'src', 'main.lua'), 'w') as f:
             f.write('print("Hello World")')
 
+        update_project_headers({"project": {"name": project_name}})
         create_project_toml()
 
         headers_ = update_lockfile_headers(get_lua_version())
@@ -82,11 +82,14 @@ def init_lib(runtime_type):
 
         add_binaries(runtime_type)
 
-        with open(os.path.join(path, 'README.md'), 'w'): pass
+        with open(os.path.join(path, 'README.md'), 'w') as f:
+            f.write(f'# {project_name.capitalize()}\n')
         with open(os.path.join(path, 'src', 'main.lua'), 'w') as f:
             f.write('print("Hello World")')
 
+        update_project_headers({"package": {"name": project_name}})
         create_lib_toml()
+
         headers_ = update_lockfile_headers(get_lua_version())
         create_lockfile(headers_)
 
