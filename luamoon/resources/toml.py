@@ -21,7 +21,7 @@ project_headers = {
 }
 
 lib_headers = {
-    "project": {
+    "package": {
         "name": "mylib",
         "version": "0.1.0",
         "description": "",
