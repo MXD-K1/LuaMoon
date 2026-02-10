@@ -50,3 +50,5 @@ def normalize_version(version):
     else:
         parts.extend(['0'] * (3 - len(parts)))
         return '.'.join(parts)
+
+__all__ = ['parse_constraint', 'matches', 'normalize_version', 'is_valid_constraint']
