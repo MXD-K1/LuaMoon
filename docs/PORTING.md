@@ -3,9 +3,10 @@ This is an explanation on how to adapt an existing Lua (or Lua-based) project to
 using the current LuaMoon manifest format as the reference. (Currently only pure Lua scripts are supported)
 
 ## Porting Steps
-1. Create project manifest and fill it
-2. adjust your source code if needed
-3. Open a new [issue](https://github.com/MXD-K1/LuaMoon/issues/new?template=add_package_to_index.md) to add your module/library to the index
+1. Create project manifest and fill it.
+2. Make sure your package have one release at least.
+3. adjust your source code if needed.
+4. Open a new [issue](https://github.com/MXD-K1/LuaMoon/issues/new?template=add_package_to_index.md) to add your module/library to the index.
 
 > Note: In the future new packages will be pushed using `luamoon publish` instead of opening new issues
 
