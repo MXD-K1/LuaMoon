@@ -20,8 +20,9 @@ def add_package(pkg_name: str, pkg_version=None):
     # todo: check lua versions and library versions
 
     with tempfile.TemporaryDirectory() as path:
-        download_pkg(pkg_data['source'], pkg_name, pkg_version or pkg_data['version'], path)
-        extract_zip(os.path.join(path, pkg_name), path)
+        success = download_pkg(pkg_data['source'], pkg_name, pkg_version or pkg_data['version'], path)
+        if success:
+            extract_zip(os.path.join(path, pkg_name), path)
 
         for _, folders, _ in os.walk(path):
             folder = folders[0]

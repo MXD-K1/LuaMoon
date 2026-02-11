@@ -33,7 +33,8 @@ def download_pkg(url: str, pkg_name: str, pkg_version: str, path: str) -> str:
     full_path = os.path.join(path, pkg_name + '.zip')
 
     if response_bytes is None:
-        return
+        return 1
 
     with open(full_path, "wb") as zip_f:
         zip_f.write(response_bytes)
+        return 0
