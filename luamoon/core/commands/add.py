@@ -20,16 +20,19 @@ def add_package(pkg_name: str, pkg_version=None):
     # todo: check lua versions and library versions
 
     with tempfile.TemporaryDirectory() as path:
-        success = download_pkg(pkg_data['source'], pkg_name, pkg_version or pkg_data['version'], path)
-        if success:
+        failure = download_pkg(pkg_data['source'], pkg_name, pkg_version or pkg_data['version'], path)
+        if not failure:
             extract_zip(os.path.join(path, pkg_name), path)
 
         for _, folders, _ in os.walk(path):
             folder = folders[0]
             os.rename(os.path.join(path, folder), os.path.join(path, pkg_name))
 
-        shutil.move(os.path.join(path, pkg_name), package_path)
-        add_pkg_to_cache(os.path.join(path, pkg_name), pkg_name, pkg_version or pkg_data['version'])
+        try:
+            shutil.copy(os.path.join(path, pkg_name), package_path)
+            add_pkg_to_cache(os.path.join(path, pkg_name), pkg_name, pkg_version or pkg_data['version'])
+        except PermissionError:
+            pass  # todo: report error
         # todo: check if the pkg is downloaded successfully
         # todo: extract it properly
 

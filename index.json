@@ -33,7 +33,7 @@
   },
   "penlight": {
     "version": "1.15.0",
-    "source": "https://github.com/lunarmodules/Penlight/archive/refs/tags/v{version}.zip",
+    "source": "https://github.com/lunarmodules/Penlight/archive/refs/tags/{version}.zip",
     "lua": ">=5.1",
     "type": "pure",
     "dependencies": {}
