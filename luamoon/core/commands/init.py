@@ -11,7 +11,7 @@ from luamoon.core import package_path, include_path, bin_path, project_name
 
 def change_paths():
     PATH['PATH'] = f'{bin_path};' + PATH['PATH']
-    PATH['LUA_PATH'] = f'{package_path}'  # lua path
+    PATH['LUA_PATH'] = os.path.join(f'{package_path}', '?.lua')  # lua path
     PATH['LUA_CPATH'] = f'{include_path}'
     # do not concatenate with the existing path
 
