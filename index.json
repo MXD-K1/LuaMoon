@@ -1,36 +1,4 @@
 {
-  "windfield": {
-    "version": "830c6f9",
-      "source": "https://github.com/a327ex/windfield/archive/{version}.zip",
-      "lua": ">=5.1",
-      "type": "pure",
-      "dependencies": {},
-      "manifest": "windfield.manifest.toml"
-  },
-  "sti": {
-    "version": "1.2.3.0",
-      "source": "https://github.com/karai17/Simple-Tiled-Implementation/archive/refs/tags/v{version}.zip",
-      "lua": ">=5.1",
-      "type": "pure",
-      "dependencies": {},
-      "manifest": "sti.manifest.toml"
-  },
-  "pixel3d": {
-      "version": "8fd6016",
-      "source": "https://github.com/challacade/pixel3d/archive/{version}.zip",
-      "lua": ">=5.1",
-      "type": "pure",
-      "dependencies": {},
-    "manifest": "pixel3d.manifest.toml"
-  },
-  "sunscreen": {
-      "version": "632bc89",
-      "source": "https://github.com/challacade/sunscreen/archive/{version}.zip",
-      "lua": ">=5.1",
-      "type": "pure",
-      "dependencies": {},
-      "manifest": "sunscreen.manifest.toml"
-  },
   "penlight": {
     "version": "1.15.0",
     "source": "https://github.com/lunarmodules/Penlight/archive/refs/tags/{version}.zip",
