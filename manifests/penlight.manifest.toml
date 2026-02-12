@@ -1,0 +1,13 @@
+[package]
+name = "Penlight"
+version = "1.15.0"
+description = "A set of pure Lua libraries focusing on input data handling (such as reading configuration files), functional programming (such as map, reduce, placeholder expressions,etc), and OS path management. Much of the functionality is inspired by the Python standard libraries."
+author = "Steve Donovan, David Manura"
+license = "MIT"
+
+[environment]
+type = "lua"
+src_dir = "lua/pl"
+
+[dependencies]
+
