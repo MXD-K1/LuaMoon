@@ -26,7 +26,7 @@ def make_parse_constraint_test_cases():
 
     for _ in range(20):
         pkg_name = ''.join([choice(letters) for _ in range(randint(3, 10))])
-        op = choice(['=>', '=>', '!=', '', '~='])
+        op = choice(['=<', '=>', '!=', '', '~='])
         x, y, z = randint(0, 10), randint(0, 10), randint(0, 10)
         test_cases.append((f'{pkg_name}{op}{x}.{y}.{z}', {}))
 
