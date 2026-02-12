@@ -10,7 +10,7 @@ OPS_MAP = {
 }
 
 PATTERN = re.compile(
-    r'([A-Za-z_][A-Za-z0-9_-]*)' +              # package name
+    r'([A-Za-z_][A-Za-z0-9-_.]*)' +              # package name
     rf'({"|".join(re.escape(op) for op in OPS_MAP.keys())})' +  # operator
     r'(\d+(?:\.\d+)*)$'                           # version (no trailing dot)
 )

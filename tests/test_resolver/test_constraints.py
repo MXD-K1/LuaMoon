@@ -7,14 +7,14 @@ import pytest
 from luamoon.resolver.constraints import *
 
 def make_parse_constraint_test_cases():
-    letters = ascii_lowercase + digits + '_-'
+    letters = ascii_lowercase + digits + '_-.'
 
     test_cases = []
-    for _ in range(100):
+    for _ in range(140):
         pkg_name = ''.join([choice(letters) for _ in range(randint(3, 10))])
         op = choice(['<', '>', '==', '<=', '>='])
         x, y, z = randint(0, 10), randint(0, 10), randint(0, 10)
-        if pkg_name.startswith(tuple(digits + '-')):
+        if pkg_name.startswith(tuple(digits + '-.')):
             test_cases.append((f'{pkg_name}{op}{x}.{y}.{z}', {}))
         else:
             dict_ = {
