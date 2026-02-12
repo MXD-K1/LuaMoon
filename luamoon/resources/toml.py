@@ -52,3 +52,14 @@ def create_project_toml():
 def create_lib_toml():
     with open(os.path.join(path, 'lualib.toml'), 'w') as toml_file:
         toml_file.write(toml.dumps(lib_headers))
+
+def read_toml(project_dir):
+    if os.path.exists(os.path.join(project_dir, 'luaproject.toml')):
+        name = 'luaproject.toml'
+    elif os.path.exists(os.path.join(project_dir, 'lualib.toml')):
+        name = 'lualib.toml'
+    else:
+        raise FileNotFoundError('luaproject.toml\\lualib.toml not found')  # todo: replace this
+
+    with open(name, 'r') as f:
+        return toml.load(f)
