@@ -4,7 +4,7 @@ import shutil
 from luamoon.core import *
 from luamoon.core.main import get_lua_version
 from luamoon.resources.lockfile import update_lockfile_headers, create_lockfile
-from luamoon.resources.toml import create_project_toml, create_lib_toml, update_project_headers, update_lib_headers
+from luamoon.resources.toml_file import create_project_toml, create_lib_toml, update_project_headers, update_lib_headers
 from luamoon.binaries import *
 from luamoon import PATH
 from luamoon.core import package_path, include_path, bin_path, project_name

@@ -1,4 +1,4 @@
-from luamoon.resources.toml import read_toml
+from luamoon.resources.toml_file import read_toml
 from luamoon.core import path
 
 def list_packages():

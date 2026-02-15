@@ -1,12 +1,11 @@
 import toml
-from typing import Any
 
 from luamoon.resources import *
 
 headers = {
         'version': '1.0.0',
         'lua-version': '5.1',
-        'packages': {}
+        'packages': []
     }
 
 def create_lockfile(headers_):
@@ -31,7 +30,7 @@ def add_package_data(pkg_name, pkg_data):
 def remove_package_data(pkg_name):
     try:
         for pkg in headers['packages']:
-            if pkg['name'] == pkg_name:
+            if pkg_name in pkg.keys():
                 headers['packages'].remove(pkg)
     except ValueError:
         return  # todo: raise an error in the cli
